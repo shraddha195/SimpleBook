@@ -1,0 +1,28 @@
+<div class="wrap">
+  <header>
+    <h1>Book Management</h1>
+    <button class="primary" (click)="toCreate()">+ Add Book</button>
+  </header>
+
+  <div *ngIf="loading">Loading...</div>
+  <div class="error" *ngIf="error">{{ error }}</div>
+
+  <ul class="list" *ngIf="books?.length">
+    <li *ngFor="let b of books">
+      <div>
+        <strong>{{ b.name }}</strong>
+        <small>{{ b.author }}</small>
+        <small>{{ b.price }}</small>
+        <small>{{ b.receiveDate }}</small>
+        <small>{{ b.removinDate }}</small>
+
+      </div>
+      <div class="actions">
+        <button (click)="toEdit(b)">Edit</button>
+        <button class="danger" (click)="onDelete(b.Bookno)">Delete</button>
+      </div>
+    </li>
+  </ul>
+
+  <p *ngIf="!books.length && !loading">No books yet. Add one!</p>
+</div>

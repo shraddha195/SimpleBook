@@ -1,0 +1,44 @@
+<form (ngSubmit)="submit()" [formGroup]="form" novalidate>
+  <div>
+    <label>Title:</label>
+    <input type="text" formControlName="title">
+    <div class="hint" *ngIf="form.controls['title']?.touched && form.controls['title']?.invalid">
+      Title is required.
+    </div>
+  </div>
+
+  <div>
+    <label>Author:</label>
+    <input type="text" formControlName="author">
+    <div class="hint" *ngIf="form.controls['author']?.touched && form.controls['author']?.invalid">
+      Author is required.
+    </div>
+  </div>
+
+  <div>
+    <label>Price:</label>
+    <input type="number" formControlName="price">
+    <div class="hint" *ngIf="form.controls['price']?.touched && form.controls['price']?.invalid">
+      Price is required and must be a number.
+    </div>
+  </div>
+
+  <div>
+    <label>Receive Date:</label>
+    <input type="date" formControlName="receiveDate">
+    <div class="hint" *ngIf="form.controls['receiveDate']?.touched && form.controls['receiveDate']?.invalid">
+      Receive Date is required.
+    </div>
+  </div>
+
+  <div>
+    <label>Removing Date:</label>
+    <input type="date" formControlName="removingDate">
+    <div class="hint" *ngIf="form.controls['removingDate']?.touched && form.controls['removingDate']?.invalid">
+      Removing Date is required.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid || saving">Save</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form>

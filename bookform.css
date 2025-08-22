@@ -1,0 +1,5 @@
+.wrap { max-width: 640px; margin: 2rem auto; padding: 1rem; }
+label { display: block; margin: .75rem 0; }
+input { width: 100%; padding: .6rem .7rem; border-radius: .5rem; border: 1px solid #ddd; }
+.actions { margin-top: 1rem; display: flex; gap: .5rem; }
+.hint { color: #a00; font-size:.85rem;}
